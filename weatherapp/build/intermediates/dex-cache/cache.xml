@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\AndroidStudioProjects\weatherapp\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="5a036e2f786ad5726d3fb58e25e2f66fe4828062">
+        <dex dex="C:\Users\User\AndroidStudioProjects\weatherapp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_85ce6a6128a52a2dfedcd1367dea63269101620c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\AndroidStudioProjects\weatherapp\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="C:\Users\User\AndroidStudioProjects\weatherapp\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_838303e673022ca8e64725fcd49a280314c86c18\classes.dex" />
+    </item>
+
+</items>

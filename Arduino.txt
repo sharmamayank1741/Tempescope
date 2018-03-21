@@ -1,0 +1,71 @@
+
+// leds are active high       
+ 
+int INR1  = 7;
+int INR2 = 6;
+int ENBR = 2;
+
+
+int INC1  = 4;
+int INC2 = 9;
+int ENBC = 8;
+
+int speed = 100;
+void setup() {
+Serial.begin(9600);
+  pinMode(13, OUTPUT);// put your setup code here, to run once:
+  digitalWrite(13,LOW);
+ pinMode(12, OUTPUT); // put your setup code here, to run once:
+ pinMode(8, OUTPUT);
+ pinMode(INR1, OUTPUT); // put your setup code here, to run once:
+ pinMode(INR2, OUTPUT); // put your setup code here, to run once:
+ pinMode(ENBR, OUTPUT);
+  pinMode(INC1, OUTPUT); // put your setup code here, to run once:
+ pinMode(INC2, OUTPUT); // put your setup code here, to run once:
+ pinMode(ENBC, OUTPUT);
+ }
+ 
+void loop() {
+  // put your main code here, to run repeatedly:
+ if(Serial.available()>0)
+   {     
+      char data= Serial.read(); // reading the data received from the bluetooth module
+      switch(data)
+      {
+       
+           case '2': digitalWrite(11, HIGH);digitalWrite(INC1, HIGH);digitalWrite(INC2, LOW);analogWrite(ENBC,60);break;//clouds
+       
+         case '3': digitalWrite(INR1, HIGH);digitalWrite(INR2, LOW);analogWrite(ENBR,180);break;//rain for precipitation 0mm to 3mm.
+        case '4': digitalWrite(INR1, HIGH);digitalWrite(INR2,LOW);analogWrite(ENBR,200);break;//rain for precipitation 3mm to 5mm.
+                  
+                    
+      
+         case '6': digitalWrite(INR1, HIGH);digitalWrite(INR2,LOW);analogWrite(ENBR,220);break;//rain for precipitation greater than 5mm
+
+//for clear sky LEDs
+
+//for 0<t<20 case 7   COLOR
+          case '7' : analogWrite(33,255);
+                   
+                   
+
+        // for 20<t<40  case 8    COLOR         
+          case '8':analogWrite(33,255);
+                  
+                 
+                  
+                     break;
+ //for t<0 blue colour case 9                    
+          case '9': analogWrite(33,255);
+                   
+                 
+                     break;
+
+                     
+        case 's': digitalWrite(11,LOW); digitalWrite(12, LOW);digitalWrite(5, LOW);digitalWrite(10, LOW);digitalWrite(9, LOW);digitalWrite(8, LOW);digitalWrite(7, LOW);digitalWrite(6, LOW);digitalWrite(33, LOW);break;
+        default : break;
+      }
+      Serial.println(data);
+   }
+   delay(50);
+}
